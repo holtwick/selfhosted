@@ -6,8 +6,9 @@ This project is accompanied by toots on Mastodon: [mastodon.social/@holtwick](ht
 
 ## My Recommended Services
 
-- [Gitea](gitea/docker-compose.yml) is a bit like Github, but for smaller groups. It helps you to manage code and tickets. But also provides a super easy registry for your private packages. it is tiny and fast.
-- [Nextcloud](nextcloud/docker-compose.yml) is your "Cloud Service". I use it for file sharing mainly. But it can do most things Google and Apple offer as well, like mail, contacts, calendar, office tools. 
+- [Gitea](gitea/docker-compose.yml) is a bit like Github, but for smaller groups. It helps you to manage code and tickets. But also provides a super easy registry for your private packages. it is tiny and fast. [-> gitea.io](https://gitea.io/)
+- [Nextcloud](nextcloud/docker-compose.yml) is your "Cloud Service". I use it for file sharing mainly. But it can do most things Google and Apple offer as well, like mail, contacts, calendar, office tools. [-> nextcloud.com](https://nextcloud.com/)
+- [LanguageTool](languagetool/docker-compose.yml) LanguageTool is your private instance of the best grammar and spell checker available. When you use this private instance, you have less to worry about non-public texts going through a public checking service. [-> languagetool.org](https://languagetool.org)
 
 *More to come on a day by day basis...*
 
@@ -37,3 +38,15 @@ To install a project:
    - Forward Port: The port the service usually uses.
 4. You can then also request the SSL certificate from there.
 
+Please note, that each `docker-compose.yml` includes these lines:
+
+```yml
+networks:
+  default:
+    external:
+      name: proxy
+```
+
+This is required to allow connection to the Nginx Proxy.
+
+Another convention is to not use Docker volumes but redirect to a local `data` folder. This helps with backups and porting to other instances.

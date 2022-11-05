@@ -1,0 +1,22 @@
+# See https://hub.docker.com/r/erikvl87/languagetool
+
+# name: languagetool
+# port: 8010
+
+version: "3"
+
+services:
+  languagetool:
+    image: erikvl87/languagetool
+    # volumes:
+    #- ./data:/data
+    restart: always
+    # environment:    
+    # - langtool_languageModel=/ngrams  # OPTIONAL: Using ngrams data
+    # - Java_Xms=128m  # OPTIONAL: Setting a minimal Java heap size of 512 mib
+    # - Java_Xmx=320m  # OPTIONAL: Setting a maximum Java heap size of 1 Gib
+
+networks:
+  default:
+    external:
+      name: proxy
