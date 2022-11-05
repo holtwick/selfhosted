@@ -1,6 +1,8 @@
 # selfhosted
 
-My personal choice of self hosted apps. 
+> My personal choice of self hosted apps. 
+
+## Get Started
 
 I run my stuff on a [cloud server instance at Hetzner](https://hetzner.cloud/?ref=thK9VpOJK5Sg). There I choose the "Docker" presets. Any other provider will probably work as well.
 
@@ -13,3 +15,7 @@ The proxy does two things:
 
 Now we can get started setting up more services. The best thing to do upfront is to configure a wildcard in your DNS, like `*.selfhosted.example.com` pointing to your cloud server instance.
 
+## Projects
+
+- [Gitea]() is a bit like Github, but for smaller groups. It helps you managing code and tickets. But also provides a super easy registry for your private packages. it is tiny and fast.
+- [Nextcloud]() is your "Cloud Service". I use it for file sharing mainly. But it can do most things Google and Apple offer as well, like mail, contacts, calendar, office tools. 
