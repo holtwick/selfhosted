@@ -1,0 +1,25 @@
+# name: gitea
+# port: 3000
+
+version: "3"
+
+services:
+  gitea:
+    image: gitea/gitea
+    container_name: gitea
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+    volumes:
+      - ./data:/data
+      - ./custom:/custom
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "222:22" # ssh
+
+networks:
+  default:
+    external:
+      name: proxy

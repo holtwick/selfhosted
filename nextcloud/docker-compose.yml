@@ -1,0 +1,49 @@
+# name: nextcloud
+# port: 80
+
+version: "3"
+
+services:
+  db:
+    image: mariadb
+    restart: always
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW --skip-innodb-read-only-compressed
+    user: www-data
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    environment:
+      - MARIADB_AUTO_UPGRADE=1
+      - MARIADB_INITDB_SKIP_TZINFO=1
+      - MYSQL_ROOT_PASSWORD=YYLZfyKJzpZ8cjXVCajz
+      - MYSQL_PASSWORD=YYLZfyKJzpZ8cjXVCajz
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+
+  nextcloud:
+    image: nextcloud
+    restart: always
+    user: www-data
+    links:
+      - db
+    volumes:
+      - ./data/nextcloud:/var/www/html
+    environment:
+      - MYSQL_PASSWORD=YYLZfyKJzpZ8cjXVCajz
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_HOST=db
+
+  cron:
+    image: nextcloud
+    restart: always
+    # user: www-data
+    volumes:
+      - ./data/nextcloud:/var/www/html
+    entrypoint: /cron.sh
+    depends_on:
+      - db
+
+networks:
+  default:
+    external:
+      name: proxy
