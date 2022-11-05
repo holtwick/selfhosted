@@ -4,6 +4,13 @@
 
 This project is accompanied by toots on Mastodon: [mastodon.social/@holtwick](https://mastodon.social/@holtwick).
 
+## My Recommended Services
+
+- [Gitea](gitea/docker-compose.yml) is a bit like Github, but for smaller groups. It helps you to manage code and tickets. But also provides a super easy registry for your private packages. it is tiny and fast.
+- [Nextcloud](nextcloud/docker-compose.yml) is your "Cloud Service". I use it for file sharing mainly. But it can do most things Google and Apple offer as well, like mail, contacts, calendar, office tools. 
+
+*More to come on a day by day basis...*
+
 ## Get Started
 
 I run my stuff on a [cloud server instance at Hetzner](https://hetzner.cloud/?ref=thK9VpOJK5Sg). There I choose the "Docker" presets. Any other provider will probably work as well.
@@ -30,7 +37,3 @@ To install a project:
    - Forward Port: The port the service usually uses.
 4. You can then also request the SSL certificate from there.
 
-# My Recommended Services
-
-- [Gitea](gitea/docker-compose.yml) is a bit like Github, but for smaller groups. It helps you to manage code and tickets. But also provides a super easy registry for your private packages. it is tiny and fast.
-- [Nextcloud](nextcloud/docker-compose.yml) is your "Cloud Service". I use it for file sharing mainly. But it can do most things Google and Apple offer as well, like mail, contacts, calendar, office tools. 
