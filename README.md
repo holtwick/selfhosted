@@ -6,11 +6,12 @@ This project is accompanied by toots on Mastodon: [mastodon.social/@holtwick](ht
 
 ## My Recommended Services
 
+- [BirdsiteLive](birdsitelive/docker-compose.yml) is a Twitter to Mastodon proxy. You can follow Twitter accounts as if they were Mastodon ones. [-> github](https://github.com/NicolasConstant/BirdsiteLive)
 - [Gitea](gitea/docker-compose.yml) is a bit like Github, but for smaller groups. It helps you to manage code and tickets. But also provides a super easy registry for your private packages. it is tiny and fast. [-> gitea.io](https://gitea.io/)
 - [Nextcloud](nextcloud/docker-compose.yml) is your "Cloud Service". I use it for file sharing mainly. But it can do most things Google and Apple offer as well, like mail, contacts, calendar, office tools. [-> nextcloud.com](https://nextcloud.com/)
 - [LanguageTool](languagetool/docker-compose.yml) LanguageTool is your private instance of the best grammar and spell checker available. When you use this private instance, you have less to worry about non-public texts going through a public checking service. [-> languagetool.org](https://languagetool.org)
-
-*More to come on a day by day basis...*
+  
+*New entries from time to time...*
 
 ## Get Started
 
